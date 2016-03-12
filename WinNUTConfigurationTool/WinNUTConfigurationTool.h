@@ -1,4 +1,4 @@
-/* 
+/*
 
    Copyright (C) 2000
 
@@ -14,7 +14,7 @@
 
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
-   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.              
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 */
 // WinNUTConfigurationTool.h : main header file for the WINNUTCONFIGURATIONTOOL application
 //
@@ -27,7 +27,7 @@
 #endif // _MSC_VER > 1000
 
 #ifndef __AFXWIN_H__
-	#error include 'stdafx.h' before including this file for PCH
+#error include 'stdafx.h' before including this file for PCH
 #endif
 
 #include "resource.h"		// main symbols
@@ -50,10 +50,10 @@ protected:
 public:
 	CWinNUTConfigurationToolApp();
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CWinNUTConfigurationToolApp)
-	public:
+	// Overrides
+		// ClassWizard generated virtual function overrides
+		//{{AFX_VIRTUAL(CWinNUTConfigurationToolApp)
+public:
 	virtual BOOL InitInstance();
 	//}}AFX_VIRTUAL
 

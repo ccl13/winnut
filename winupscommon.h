@@ -1,7 +1,7 @@
 #ifndef NUT_WINUPSCOMMON_H
 #define NUT_WINUPSCOMMON_H
 
-/* 
+/*
    Copyright (C) 2001 Andrew Delpha (delpha@computer.org)
 
    This program is free software; you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 
    You should have received a copy of the GNU General Public License
    along with this program; if not, WRITE to the Free Software
-   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.              
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 */
 
 /*
@@ -91,9 +91,9 @@
 // Structure used to pass the configuration parameters
 typedef struct WinNUTConfStruct
 {
-	char execPath[MAXPATHLEN+1];
-	char confPath[MAXPATHLEN+1];
-	char logPath[MAXPATHLEN+1];
+	char execPath[MAXPATHLEN + 1];
+	char confPath[MAXPATHLEN + 1];
+	char logPath[MAXPATHLEN + 1];
 	int logLevel;
 	BOOL runAsService;
 	BOOL win9XAutoStart;
@@ -101,7 +101,7 @@ typedef struct WinNUTConfStruct
 	int upsdPort;
 
 	int oslevel;
-	char curAppPath[MAXPATHLEN+1];
+	char curAppPath[MAXPATHLEN + 1];
 	int shutdownType;
 	int shutdownAfterSeconds;	/*Shut machine down after x many seconds or LOWBATT/FSD whichever comes first. -1 means wait for LOWBATT or FSD */
 

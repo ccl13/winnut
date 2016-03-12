@@ -1,4 +1,4 @@
-/* 
+/*
 
    Copyright (C) 2000
 
@@ -14,7 +14,7 @@
 
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
-   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.              
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 */
 // WinNUTConfigurationTool.cpp : Defines the class behaviors for the application.
 //
@@ -66,7 +66,7 @@ CWinNUTConfigurationToolApp theApp;
 
 BOOL CWinNUTConfigurationToolApp::InitInstance()
 {
-	WinNutConf curConfig={0};
+	WinNutConf curConfig = { 0 };
 	int pos = 0;
 	LPTSTR commandLine = NULL;
 	// Standard initialization
@@ -85,22 +85,22 @@ BOOL CWinNUTConfigurationToolApp::InitInstance()
 
 	//We're going to check for the uninstall flag
 	commandLine = GetCommandLine();
-	if(commandLine != NULL)
+	if (commandLine != NULL)
 	{
 		CString commandLineCStr(commandLine);
 		int uninstallFlag = commandLineCStr.Find("/uninstall");
-		if(uninstallFlag != -1)
+		if (uninstallFlag != -1)
 		{
 			/*
-			    OK - we've been given the uninstall flag.  We need to
+				OK - we've been given the uninstall flag.  We need to
 				1) Stop any running instance
 				2) uninstall services and auto start if currently installed
 			 */
-			//1) stop any running instances
+			 //1) stop any running instances
 			DWORD status = getWinNUTStatus(&curConfig);
-			if(status & (RUNNING_SERVICE_MODE | RUNNING_APP_MODE))
+			if (status & (RUNNING_SERVICE_MODE | RUNNING_APP_MODE))
 			{
-				while(stopWinNUT(&curConfig))
+				while (stopWinNUT(&curConfig))
 				{
 					Sleep(50);
 				}
@@ -116,15 +116,15 @@ BOOL CWinNUTConfigurationToolApp::InitInstance()
 		}
 	}
 
-	_getcwd(curConfig.curAppPath,MAXPATHLEN);
+	_getcwd(curConfig.curAppPath, MAXPATHLEN);
 	pos = strlen(curConfig.curAppPath);
-	curConfig.curAppPath[pos]='\\';
-	curConfig.curAppPath[pos+1]='*';
-	curConfig.curAppPath[pos+2]='.';
-	curConfig.curAppPath[pos+3]='*';
-	curConfig.curAppPath[pos+4]='\0';
+	curConfig.curAppPath[pos] = '\\';
+	curConfig.curAppPath[pos + 1] = '*';
+	curConfig.curAppPath[pos + 2] = '.';
+	curConfig.curAppPath[pos + 3] = '*';
+	curConfig.curAppPath[pos + 4] = '\0';
 
-	CConfigToolDlg dlg(NULL,&curConfig);
+	CConfigToolDlg dlg(NULL, &curConfig);
 	m_pMainWnd = &dlg;
 	int nResponse = dlg.DoModal();
 	if (nResponse == IDOK)

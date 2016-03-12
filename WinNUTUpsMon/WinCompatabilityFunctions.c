@@ -1,4 +1,4 @@
-/* 
+/*
 
    Copyright (C) 1999  Russell Kroll <rkroll@exploits.org>
 
@@ -14,7 +14,7 @@
 
    You should have received a copy of the GNU General Public License
    along with this program; if not, WRITE to the Free Software
-   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.              
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 */
 
 #include "common.h"
@@ -25,19 +25,19 @@ extern int errno;
 
 int sktconnect(int fh, struct sockaddr * name, int len)
 {
-	int ret = connect(fh,name,len);
+	int ret = connect(fh, name, len);
 	errno = WSAGetLastError();
 	return ret;
 }
 int sktread(int fh, char *buf, int size)
 {
-	int ret = recv(fh,buf,size,0);
+	int ret = recv(fh, buf, size, 0);
 	errno = WSAGetLastError();
 	return ret;
 }
 int sktwrite(int fh, char *buf, int size)
 {
-	int ret = send(fh,buf,size,0);
+	int ret = send(fh, buf, size, 0);
 	errno = WSAGetLastError();
 	return ret;
 }

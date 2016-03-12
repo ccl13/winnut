@@ -1,4 +1,4 @@
-/* 
+/*
 
    Copyright (C) 2000
 
@@ -14,7 +14,7 @@
 
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
-   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.              
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 */
 // ConfigToolDlg.h : header file
 //
@@ -31,13 +31,13 @@
 
 class CConfigToolDlg : public CDialog
 {
-// Construction
+	// Construction
 public:
 	CConfigToolDlg(CWnd* pParent = NULL);	// standard constructor
 	CConfigToolDlg(CWnd* pParent /*=NULL*/, WinNutConf *conf);
 	void UpdateWinNUTStatus();
-// Dialog Data
-	//{{AFX_DATA(CConfigToolDlg)
+	// Dialog Data
+		//{{AFX_DATA(CConfigToolDlg)
 	enum { IDD = IDD_WINNUTCONFIGURATIONTOOL_DIALOG };
 	CButton	m_UseTimedShutdown;
 	CEdit	m_shutdownDelay;
@@ -65,7 +65,7 @@ public:
 
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CConfigToolDlg)
-	protected:
+protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
 	//}}AFX_VIRTUAL
 
@@ -73,11 +73,11 @@ public:
 protected:
 	HICON m_hIcon;
 	WinNutConf *m_conf;
-	char m_lastPath[MAXPATHLEN+1];
+	char m_lastPath[MAXPATHLEN + 1];
 	const char* m_STNormal;
 	const char* m_STForce;
 	const char* m_STForceIfHung;
-    const char* m_STHibernate;
+	const char* m_STHibernate;
 
 	void doServiceDepCheck();
 	void doShutdownDelayDepCheck();
